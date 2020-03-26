@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Image Gallery</title>
+  </head>
+  <body>
+        <div class="gl-header">
+        </div>
+
+        <div id="contenedor">
+            <div id="navbar" style="text-align: center;">
+                <ul id="nav">
+                    <li> <a> Home </a></li>
+                    <li> <a> Gallery </a></li>
+                    <li> <a href="../index.html"> Me&Myself </a></li>
+                </ul>
+            </div>
+        </div>
+
+        <div id="contentBody">
+            {% load static %}
+            <link rel="stylesheet" type="text/css" href="{% static 'gallery/style.css' %}">
+
+            <div class="row">
+                {% for image in images %}
+                <div class="column">
+                    {% for img in image %}
+                    <div class="container">
+                        <img src="{{img.image.url}}" alt="{{img.name}}">
+                        <div class="overlay">{{img.name}}</div>
+                    </div>
+                    {% endfor %}
+                </div>
+                {% endfor %}
+            </div>
+        </div>
+  </body>
+</html>

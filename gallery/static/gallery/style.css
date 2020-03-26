@@ -1,0 +1,14 @@
+@import "./css_mosaic.css";
+@import "./css_Menu.css";
+
+
+.gl-header { background-image: url("../../../media/Edited_5196_BW.jpg"); }
+
+.row {
+    display: flex;
+    -ms-flex-wrap: wrap; /* IE 10 */
+    flex-wrap: wrap;
+    padding: 0 4px;
+
+	width: 90wh;
+}
