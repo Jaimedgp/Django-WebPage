@@ -30,5 +30,5 @@ def home(request):
     subPages = [{"title": "Home", "url": "../home/"},]
 
     return render(request, 'home.html', {'images': images,
-        'bskgrnd': "../../../media/Edited_5196_BW.jpg",
+        'bskgrnd': "../../media/Edited_5196_BW.jpg",
         'subPages': subPages})
