@@ -85,5 +85,5 @@ body::-webkit-scrollbar { display: none; }
     padding: 5px;
     text-decoration: none;
 
-    font-size: 160%;
+    font-size: 4vh;
 }

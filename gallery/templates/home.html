@@ -2,17 +2,9 @@
 
 {% block content %}
 
-    <div class="row">
-        {% for image in images %}
-        <div class="column">
-            {% for img in image %}
-            <div class="container">
-                <img src="{{img.image.url}}" alt="{{img.name}}">
-                <div class="overlay">{{img.name}}</div>
-            </div>
-            {% endfor %}
-        </div>
-        {% endfor %}
+    <div class="description" style="font-size: 6vh;">
+        Esto tan solo es una prueba para ver que tal funciona todo esto
     </div>
 
 {% endblock %}
+

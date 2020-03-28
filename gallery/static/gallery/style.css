@@ -1,13 +1,4 @@
-@import "./css_Menu.css";
-
-
-.row {
-    display: flex;
-    flex-wrap: wrap;
-    padding: 0 4px;
-
-    float: left;
-}
+import "./css_Menu.css";
 
 
 @media (min-aspect-ratio: 32/20){
@@ -16,6 +7,15 @@
 
 @media (max-aspect-ratio: 321/200){
 	.column { width: 100%; }
+}
+
+
+.row {
+    display: flex;
+    flex-wrap: wrap;
+    padding: 0 4px;
+
+    float: left;
 }
 
 
