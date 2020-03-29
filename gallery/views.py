@@ -3,6 +3,9 @@ from .models import *
 from .forms import *
 from django.http import HttpResponseRedirect
 
+subPages = [{"title": "Inicio", "url": "../home/"},
+            {"title": "Album", "url": "../album/"}]
+
 
 # Create your views here.
 def upload_image(request):
@@ -12,8 +15,8 @@ def upload_image(request):
         form = ImageForm(request.POST, request.FILES)
         if form.is_valid():
             new_image = Image(image = form.cleaned_data["image"],
-                              name = form.cleaned_data["name"]
-                              )
+                                name = form.cleaned_data["name"]
+                                )
             new_image.save()
             return HttpResponseRedirect('/gallery/upload_image/')
 
@@ -40,11 +43,8 @@ def gallery(request):
 
     images = split_columns(img_choise, 3)
 
-    subPages = [{"title": "Home", "url": "../home/"},
-                {"title": "album", "url": "../album/"}]
-
     return render(request, 
-            'album.html', 
+            'album/index.html', 
             {
                 'images': images,
                 'bskgrnd': "../../media/Edited_5196_BW.jpg",
@@ -55,11 +55,8 @@ def album(request, types='VA'):
 
     images = split_columns(Image.objects.all().filter(types=types), 3)
 
-    subPages = [{"title": "Home", "url": "../home/"},
-                {"title": "album", "url": "../album/"}]
-
     return render(request, 
-            'album.html', 
+            'album/types.html', 
             {
                 'images': images,
                 'bskgrnd': "../../media/Edited_5196_BW.jpg",
@@ -69,11 +66,8 @@ def album(request, types='VA'):
 
 def home(request):
 
-    subPages = [{"title": "Home", "url": "../home/"},
-                {"title": "album", "url": "../album/"}]
-
     return render(request, 
-            'album.html', 
+            'home.html', 
             {
                 'bskgrnd': "../../media/Edited_5196_BW.jpg",
                 'subPages': subPages,

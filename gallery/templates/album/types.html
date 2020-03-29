@@ -1,4 +1,10 @@
-{% extends "base_subPage.html" %}
+{% extends "../base_subPage.html" %}
+
+{% block style %}
+    {% load static %}
+    <link rel="stylesheet" type="text/css" href="{% static 'gallery/album/types.css' %}">
+{% endblock %}
+
 
 {% block content %}
 

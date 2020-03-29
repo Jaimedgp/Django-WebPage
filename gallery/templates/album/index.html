@@ -1,0 +1,27 @@
+{% extends "../base_subPage.html" %}
+
+{% block style %}
+    {% load static %}
+    <link rel="stylesheet" type="text/css" href="{% static 'gallery/album/index.css' %}">
+{% endblock %}
+
+
+{% block content %}
+
+    <div class="row">
+        {% for image in images %}
+        <div class="column">
+            {% for img in image %}
+            <div class="container">
+                <a  href="./types='{{img.types}}'">
+                    <img src="{{img.image.url}}" alt="{{img.name}}">
+                </a>
+                <div class="overlay">{{img.get_types_display}}</div>
+            </div>
+            {% endfor %}
+        </div>
+        {% endfor %}
+    </div>
+
+{% endblock %}
+

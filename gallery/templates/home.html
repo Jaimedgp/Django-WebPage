@@ -1,8 +1,13 @@
 {% extends "base_subPage.html" %}
 
+{% block style %}
+    {% load static %}
+    <link rel="stylesheet" type="text/css" href="{% static 'gallery/home.css' %}">
+{% endblock %}
+
 {% block content %}
 
-    <div class="description" style="font-size: 6vh;">
+    <div class="description">
         Esto tan solo es una prueba para ver que tal funciona todo esto
     </div>
 
