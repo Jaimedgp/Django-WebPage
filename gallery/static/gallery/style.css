@@ -1,4 +1,4 @@
-import "./css_Menu.css";
+@import "./css_Menu.css";
 
 
 @media (min-aspect-ratio: 32/20){
