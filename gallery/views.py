@@ -34,7 +34,6 @@ def split_columns(images, numcol):
 
 
 def gallery(request):
-
     types_choise = [choise[0] for choise in
             Image._meta.get_field('types').choices ]
 
@@ -52,7 +51,6 @@ def gallery(request):
             })
 
 def album(request, types='VA'):
-
     images = split_columns(Image.objects.all().filter(types=types), 3)
 
     return render(request, 
@@ -65,7 +63,6 @@ def album(request, types='VA'):
 
 
 def home(request):
-
     return render(request, 
             'home.html', 
             {
