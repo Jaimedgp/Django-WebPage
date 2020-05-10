@@ -17,9 +17,9 @@ class Image(models.Model):
             ('VA', 'Variado'),
             ]
 
-    #types = models.CharField(max_length=2, 
-            #choices=Tipos_FotoGrafia, 
-            #default='VA',)
+    types = models.CharField(max_length=2, 
+            choices=Tipos_FotoGrafia, 
+            default='VA',)
 
     image = models.ImageField(upload_to = 'gallery',
             default='gallery/static/images/no-img.jpg')
@@ -35,6 +35,7 @@ class Image(models.Model):
 
     def save(self, **kwargs):
         model = load_model("gallery/src/model.h5")
+        print("Predicting Types...")
         img = open_img(self.image.url)
 
         ind_types = model.predict_classes()[0][0]
